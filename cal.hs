@@ -1,5 +1,7 @@
 module Main where
 
+import System.Environment (getArgs)
+
 type Year     = Int -- 0..
 type Month    = Int -- 1..12
 type Day      = Int -- 1..31
@@ -99,9 +101,8 @@ showCalender ( year, firstdays ) = unlines
  
 main :: IO ()
 main = do 
-          putStrLn "See calendar for which year? "
-          input <- getLine
-          let year     = (read input)::Year
+          args <- getArgs
+          let year     = (read $ head args)::Year
               calendar = calendarForYear year
           putStrLn (showCalender calendar)
            
