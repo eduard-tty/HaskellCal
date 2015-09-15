@@ -5,13 +5,17 @@ type Month    = Int -- 1..12
 type Day      = Int -- 1..31
 type Date     = (Day,Month,Year)
 type Weekday  = Int -- 0..6
-type Calendar = ( Year, [ Weekday ] ) -- Number for first weekday of that month
+
+type Calendar = ( Year, [Weekday] ) -- Number for first weekday of that month
               
 monthNames :: [String]
 monthNames = [ "January"   , "February" , "March"    , "April"
              , "May"       , "June"     , "July"     , "August" 
              , "September" , "October"  , "November" , "December"
              ]        
+
+weekdays :: [String]
+weekdays = ["su","mo","tu","we","th","fr","sa"]
 
 calendarForYear :: Year -> Calendar
 calendarForYear year = ( year, [ firstDayOfMonth year m | m <- [1..12] ] )
@@ -46,7 +50,6 @@ calenderMonth year month firstday = title : body
              where 
                -- boxes are 2 character strings
                boxes      =  weekdays ++ startSpace ++ days ++ endSpace 
-               weekdays   = ["su","mo","tu","we","th","fr","sa"] 
                startSpace = replicate firstday "  "
                days       = map (rjustify 2 . show) [1..daysInMonth month year] 
                endSpace   = repeat "  "
