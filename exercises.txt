@@ -2,7 +2,7 @@ Excercises
 
 1) Where and let/in
 
-Remove the duplication if year-1 from nrOfLeapYears by using a where clause
+Remove the duplication of year-1 from nrOfLeapYears by using a where clause
 
 2) Guards 
 
@@ -21,7 +21,7 @@ rjustify :: Int -> String -> String
 -- center a string in a string of given length 
 cjustify :: Int -> String -> String
 
-You may assume the orginal strings fits
+You may assume the orginal string fits
 
 4) Importing
 
@@ -29,4 +29,10 @@ Use this library to replace the definitions in calendarMonth
 
 5) List comprehensions
 
-Define daysThisYearto return a list of the days of each month for the given year
+Define daysThisYear to return a list of the days of each month 
+for the given year using a list comprehension
+
+6) Understanding
+
+Change the code to get 4 month in a row in stead of three
+
