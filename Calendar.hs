@@ -21,11 +21,7 @@ calendarForYear :: Year -> Calendar
 calendarForYear year = Calendar ( year, [ firstDayOfMonth year m | m <- [1..12] ] )
 
 isLeapYear :: Year -> Bool
-isLeapYear year
-    | 400 `devides` year = True
-    | 100 `devides` year = False
-    |   4 `devides` year = True
-    | otherwise          = False
+isLeapYear year = False
     where
         devides :: Int -> Int -> Bool
         devides n y = y `mod` n == 0
@@ -83,10 +79,7 @@ firstDayOfMonth year month  = sum ( year : nrOfLeapYears : daysThisYear ) `mod` 
         daysThisYear = [ daysInMonth m year | m <- [1..(month-1)] ]
       
         nrOfLeapYears :: Int
-        nrOfLeapYears = (y `div` 4) - (y `div` 100) + (y `div` 400)
-            where
-                y = year -1 
-
+        nrOfLeapYears = ((year-1) `div` 4) - ((year-1)`div` 100) + ((year-1) `div` 400)
 
 separateBy :: a -> [a] -> [a]
 separateBy sep xs = sep : concatMap (\x -> [x,sep]) xs
