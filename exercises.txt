@@ -1,0 +1,32 @@
+Excercises
+
+1) Where and let/in
+
+Remove the duplication if year-1 from nrOfLeapYears by using a where clause
+
+2) Guards 
+
+Fix isLeapYear by using 4 guards
+
+3) Modules
+
+White a module called MyJustify that exposes
+
+-- left justify a string in a string of given length 
+ljustofy :: Int -> String -> String
+
+-- right justify a string in a string of given length 
+rjustify :: Int -> String -> String
+
+-- center a string in a string of given length 
+cjustify :: Int -> String -> String
+
+You may assume the orginal strings fits
+
+4) Importing
+
+Use this library to replace the definitions in calendarMonth
+
+5) List comprehensions
+
+Define daysThisYearto return a list of the days of each month for the given year
