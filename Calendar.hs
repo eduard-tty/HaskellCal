@@ -76,7 +76,7 @@ firstDayOfMonth :: Year -> Month -> Int
 firstDayOfMonth year month  = sum ( year : nrOfLeapYears : daysThisYear ) `mod` 7
     where 
         daysThisYear :: [ Day ]
-        daysThisYear = [ daysInMonth m year | m <- [1..(month-1)] ]
+        daysThisYear = []
       
         nrOfLeapYears :: Int
         nrOfLeapYears = ((year-1) `div` 4) - ((year-1)`div` 100) + ((year-1) `div` 400)
